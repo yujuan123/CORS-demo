@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="./js/jquery.js"></script>
+    <script type="text/javascript">
+        function loadData(){
+            $.ajax({
+                url: 'http://localhost:4001/show-data',
+                type: 'get',
+                dataType: 'json',
+                success: function(data){
+                    console.log(data.name);
+                },
+                error: function(err){
+                    console.log(err.message);
+                }
+            })
+        }
+    </script>
+</head>
+<body>
+<button onclick="loadData()">获取数据</button>
+<div id="data"></div>
+</body>
+</html>
